@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="Calculator.css">
-    </head>
-    <body>
-        <script src="Calculator.js"></script>
-        <div class="screen" style="width:55%" id="screen">Screen</div>
-        <div class="btn" style="width:60%">
-            <button style="width:25%" id="1" onclick="number('1')">1</button>
-            <button style="width:25%" id="2" onclick="number('2')">2</button>
-            <button style="width:25%" id="3" onclick="number('3')">3</button>
-            <button style="width:25%" id="+" onclick="operator1('+')">+</button>
+  <head>
+    <link rel="stylesheet" href="Calculator.css" />
+  </head>
+  <body>
+    <script src="Calculator.js"></script>
+    <div>
+        <div class="screen" id="screen">Screen</div>
+        <div class="btn">
+            <button id="1" onclick="number('1')">1</button>
+            <button id="2" onclick="number('2')">2</button>
+            <button id="3" onclick="number('3')">3</button>
+            <button id="+" onclick="operator1('+')">+</button>
 
-            <button style="width:25%" id="4" onclick="number('4')">4</button>
-            <button style="width:25%" id="5" onclick="number('5')">5</button>
-            <button style="width:25%" id="6" onclick="number('6')">6</button>
-            <button style="width:25%" id="-" onclick="operator1('-')">-</button>
+            <button id="4" onclick="number('4')">4</button>
+            <button id="5" onclick="number('5')">5</button>
+            <button id="6" onclick="number('6')">6</button>
+            <button id="-" onclick="operator1('-')">-</button>
 
-            <button style="width:25%" id="7" onclick="number('7')">7</button>
-            <button style="width:25%" id="8" onclick="number('8')">8</button>
-            <button style="width:25%" id="9" onclick="number('9')">9</button>
-            <button style="width:25%" id="*" onclick="operator1('*')">*</button>
+            <button id="7" onclick="number('7')">7</button>
+            <button id="8" onclick="number('8')">8</button>
+            <button id="9" onclick="number('9')">9</button>
+            <button id="*" onclick="operator1('*')">*</button>
 
-            <button style="width:25%" id="0" onclick="number('0')">0</button>
-            <button style="width:25%" id="." onclick="decim()">.</button>
-            <button style="width:25%" id="^" onclick="operator1('^')">^</button>
-            <button style="width:25%" id="/" onclick="operator1('/')">/</button>
+            <button id="0" onclick="number('0')">0</button>
+            <button id="." onclick="decim()">.</button>
+            <button id="^" onclick="operator1('^')">^</button>
+            <button id="/" onclick="operator1('/')">/</button>
 
-            <button style="width:50%" id="clear" onclick="cleared()">CLEAR</button>
-            <button style="width:50%" id="enter" onclick="enter()">ENTER</button>
+            <button id="clear" onclick="cleared()">CLEAR</button>
+            <button id="enter" onclick="enter()">ENTER</button>
         </div>
-
-        
-    </body>
+    </div>
+</body>
 </html>
