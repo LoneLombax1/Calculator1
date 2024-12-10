@@ -10,13 +10,27 @@ body {
     padding: 50px;
 }
 
+.container{
+    width: 150px; /* Fixed width for the grid */
+}
+
+.btn{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Four equal columns */
+    gap: 10px; /* Space between grid items */
+}
+
 .btn button:hover {
     background-color: rgb(154, 11, 11);
 }
 
 .screen {
     border: 1px solid black;
+    height: 50px;
     padding: 33px;
     font-size: 50px;
+}
 
+#clear, #enter {
+    grid-column: span 2; /* Span two columns */
 }

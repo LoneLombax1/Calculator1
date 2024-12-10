@@ -5,71 +5,60 @@ let op1;
 let done;
 
 function cleared() {
-    let screen1 = document.getElementById("screen")
-    screen1.innerHTML = "";
-    screen1.style.padding = "58px"
-    oper = false;
-    op1 = "";
-    done = false;
-
-};
+  let screen1 = document.getElementById("screen");
+  screen1.innerText = "";
+  oper = false;
+  op1 = "";
+  done = false;
+}
 
 function number(num) {
+  if (done) cleared();
 
-    if(done === true) {
-        cleared()
-    }
+  let buttn = document.getElementById("screen");
 
-    let buttn = document.getElementById("screen")
+  if (buttn.innerHTML === "Screen") {
+    buttn.innerHTML = "";
+  }
 
-    if (buttn.innerHTML === "Screen") {
-        buttn.innerHTML = "";
-    }
-
-    buttn.style.padding = "33px";
-    buttn.innerHTML += num;
-
-};
+  buttn.style.padding = "33px";
+  buttn.innerHTML += num;
+}
 
 function operator1(op) {
+  var1 = document.getElementById("screen").innerHTML;
 
-    var1 = document.getElementById("screen").innerHTML
-
-    cleared();
-    op1 = op
-    oper = true;
-
-};
+  cleared();
+  op1 = op;
+  oper = true;
+}
 
 function decim() {
+  if (done) cleared();
 
-    if(done === true) {
-        cleared();
-    };
-    if (document.getElementById("screen").innerHTML.includes(".")) {
-        document.getElementById("screen").innerHTML = "ERROR!"
-    };
+  const screen = document.getElementById("screen");
+  if (screen.innerHTML.includes(".")) {
+    screen.innerHTML = "ERROR!";
+    return;
+  }
 
-    if(document.getElementById("screen").innerHTML === "") {
-        document.getElementById("screen").innerHTML = "0.";
-    } else {
-        number('.');
-    }
-};
+  if (screen.innerHTML === "") {
+    screen.innerHTML = "0.";
+  } else {
+    inputNumber(".");
+  }
+}
 
-function enter() {
+function calculate() {
+  if (!oper) return; // Prevent calculation if no operator set
+  let result;
 
-    if (oper === true) {
-        if (op1 === "^") {
-            var2 = document.getElementById("screen").innerHTML;
-            result = var1 ** var2;
-        } else {
-            var2 = document.getElementById("screen").innerHTML; 
-            result = eval(+var1 + op1 + +var2);
-        };
+  if (operator === "^") {
+    result = Math.pow(firstOperand, secondOperand);
+  } else {
+    result = eval(`${+firstOperand} ${operator} ${+secondOperand}`);
+  }
 
-        document.getElementById("screen").innerHTML = result;
-        done = true;
-    } else return;
-
-};
+  document.getElementById("screen").innerHTML = result;
+  calculationDone = true;
+}
